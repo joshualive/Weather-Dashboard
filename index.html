@@ -17,13 +17,17 @@
         <div class="columns">
             <div class="column is-2 has-background-white-bis">
                 <div class="block">
-                    <div class="field">
-                        <label class="label">Search for a city:</label>
+                    <label class="label">Search for a city:</label>
+                    <div class="field has-addons">
                         <div class="control">
                           <input class="input" type="text" placeholder="City name">
                         </div>
-                    </div>
-                    <button class="button is-link">Search</button>
+                        <div class="control">
+                          <a class="button is-link">
+                            Search
+                          </a>
+                        </div>
+                      </div>
                 </div>
                 <div class="block">
                     <table class="table is-bordered is-fullwidth">
@@ -67,7 +71,7 @@
                                 Wind Speed: ### MPH
                             </div>
                             <div class="block">
-                                UX Index: #.#
+                                UX Index: <button class="button is-small is-link is-warning">#.#</button>
                             </div>
                         </div>
                     </div>
