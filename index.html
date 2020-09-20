@@ -24,7 +24,7 @@
                           <input class="input" type="text" placeholder="City name">
                         </div>
                         <div class="control">
-                          <a class="button is-link">
+                          <a class="button is-link" id="search">
                             <i class="fa fa-search"></i>
                           </a>
                         </div>
@@ -58,22 +58,22 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="block level">
-                                <p class="title">
-                                    City 
+                                <p class="title" id="cityName">
+                                    City (Date)
                                     <img src="https://bulma.io/images/placeholders/48x48.png" alt="Placeholder image">
                                 </p>
                             </div>
-                            <div class="block">
-                                Temperature: ### F
+                            <div class="block" id="currentTemp">
+                                <strong>Temperature:</strong> ### F
                             </div>
-                            <div class="block">
-                                Humidity: ##%
+                            <div class="block" id="currentHumidity">
+                                <strong>Humidity:</strong> ##%
                             </div>
-                            <div class="block">
-                                Wind Speed: ### MPH
+                            <div class="block" id="currentWind">
+                                <strong>Wind Speed:</strong> ### MPH
                             </div>
-                            <div class="block">
-                                UX Index: <button class="button is-small is-link is-warning">#.#</button>
+                            <div class="block" id="currentUV">
+                                <strong>UX Index:</strong> #.#
                             </div>
                         </div>
                     </div>
@@ -179,5 +179,6 @@
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
