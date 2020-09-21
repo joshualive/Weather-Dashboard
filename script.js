@@ -10,43 +10,47 @@ document
     .getElementById('search')
     .addEventListener('click', function (event) {
         event.preventDefault()
+        let city = document.getElementById('city').value
         
-        let weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Ottawa&units=metric&appid=8f1123f07caa7464aa80ecc99167d3f0`
+        let longlatURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=1&appid=8f1123f07caa7464aa80ecc99167d3f0`
 
-        fetch(weatherURL)
+        fetch(longlatURL)
             .then(function (response) {
                 return response.json()
             })
-            .then(function (weatherResults) {
-                console.log(weatherResults)
+            .then(function (longlatResults) {
+                console.log(longlatResults)
+                let lon = longlatResults.city.coord.lon
+                let lat = longlatResults.city.coord.lat
 
-                // Get today's weather.
-                cityName.innerHTML = `
-                ${weatherResults.city.name} 
-                <img src="https://openweathermap.org/img/wn/${weatherResults.list[0].weather[0].icon}.png" alt="${weatherResults.list[0].weather[0].description} weather icon.">`
+                let weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=8f1123f07caa7464aa80ecc99167d3f0`
 
-                currentTemp.innerHTML = `
-                <strong>Temperature:</strong> ${weatherResults.list[0].main.temp} C`
-
-                currentHumidity.innerHTML = `
-                <strong>Humidity:</strong> ${weatherResults.list[0].main.humidity}%`
-
-                currentWind.innerHTML = `
-                <strong>Wind Speed:</strong> ${weatherResults.list[0].wind.speed}`
-
-                let uvURL = `https://api.openweathermap.org/data/2.5/uvi?appid=8f1123f07caa7464aa80ecc99167d3f0&lat=${weatherResults.city.coord.lat}&lon=${weatherResults.city.coord.lon}`
-
-                // Get current UV index.
-                fetch(uvURL)
+                fetch(weatherURL)
                     .then(function (response) {
                         return response.json()
-                })
-                .then(function (uvResults) {
-                    console.log(uvResults)
-                    currentUV.innerHTML = `
-                    <strong>UV Index:</strong> ${uvResults.value}`
-                })
+                    })
+                    .then(function (weatherResults) {
+                        console.log(weatherResults)
 
-                
+                        // Get today's weather.
+                        cityName.innerHTML = `
+                        ${city} 
+                        <img src="https://openweathermap.org/img/wn/${weatherResults.current.weather[0].icon}.png" alt="${weatherResults.current.weather[0].description} weather icon.">`
+
+                        currentTemp.innerHTML = `
+                        <strong>Temperature:</strong> ${weatherResults.current.temp} C`
+
+                        currentHumidity.innerHTML = `
+                        <strong>Humidity:</strong> ${weatherResults.current.humidity}%`
+
+                        currentWind.innerHTML = `
+                        <strong>Wind Speed:</strong> ${weatherResults.current.wind_speed}`
+
+                        currentUV.innerHTML = `
+                        <strong>UV Index:</strong> ${weatherResults.current.uvi}`
+
+                    })
+
             })
+
     })
