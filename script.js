@@ -1,4 +1,4 @@
-let searchedCities = []
+let savedCities = document.getElementById('savedCities')
 
 document
     .getElementById('search')
@@ -6,7 +6,13 @@ document
         event.preventDefault()
         let city = document.getElementById('city').value
         getWeather(city)
+        savedCities.insertAdjacentHTML("afterbegin", `<button type="button" class="button is-fullwidth mb-1" cityName="${city}" onclick="pushCity(this)">${city}</button>`)
     })
+
+function pushCity(button) {
+    let city = button.getAttribute('cityName')
+    getWeather(city)
+}
 
 function getWeather (city) {
     let longlatURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=1&appid=8f1123f07caa7464aa80ecc99167d3f0`
