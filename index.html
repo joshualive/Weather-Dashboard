@@ -24,11 +24,12 @@
                           <input class="input" onfocus="this.value=''" type="text" placeholder="City name" id="city">
                         </div>
                         <div class="control">
-                          <a class="button is-link" id="search">
-                            <i class="fa fa-search"></i>
+                            <button type="button" class="button has-background-link has-text-white" type="submit" id="search">
+                                <i class="fa fa-search"></i>
+                            </button>
                           </a>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="block" id="savedCities">
                     <!-- Saved city searches go here -->
@@ -55,7 +56,7 @@
                                 <strong>Wind Speed:</strong> ### KMPH
                             </div>
                             <div class="block" id="currentUV">
-                                <strong>UX Index:</strong> #.#
+                                <strong>UX Index:</strong> <button class="button is-small is-link is-warning">#.#</button>
                             </div>
                         </div>
                     </div>
@@ -155,13 +156,14 @@
                                         </div>
                                     </div>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
