@@ -1,7 +1,6 @@
 // On page load check for 
 window.onload = function displayLastSearch() {
-    if (localStorage.getItem('lastCity') === null) {
-    }
+    if (localStorage.getItem('lastCity') === null) {}
     else {
         let city = localStorage.getItem('lastCity') 
         getWeather(city)

@@ -4593,6 +4593,7 @@
     color: #4a4a4a;
     max-width: 100%;
     position: relative;
+    border-radius: 10px;
   }
   
   .card-header {
@@ -4631,6 +4632,7 @@
   .card-content {
     background-color: transparent;
     padding: 1.5rem;
+    border-radius: 10px;
   }
   
   .card-footer {
