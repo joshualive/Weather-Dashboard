@@ -1,3 +1,13 @@
+let today = moment().format("MMMM Do")
+let tomorrow = moment().add(24, 'hours').format('dddd'); 
+let dayTwo = moment().add(48, 'hours').format('dddd');
+let dayThree = moment().add(72, 'hours').format('dddd');
+let dayFour = moment().add(96, 'hours').format('dddd');
+let dayFive = moment().add(120, 'hours').format('dddd');
+let daySix = moment().add(144, 'hours').format('dddd');
+let daySeven = moment().add(168, 'hours').format('dddd');
+
+
 // On page load check for 
 window.onload = function displayLastSearch() {
     if (localStorage.getItem('lastCity') === null) {}
@@ -48,7 +58,7 @@ function getWeather (city) {
 
             // Today's weather.
             document.getElementById('cityName').innerHTML = `
-            ${city} 
+            ${city} (${today}) 
             <img src="https://openweathermap.org/img/wn/${weatherResults.current.weather[0].icon}.png" alt="${weatherResults.current.weather[0].description} weather icon.">`
 
             document.getElementById('currentTemp').innerHTML = `
@@ -67,6 +77,8 @@ function getWeather (city) {
             document.getElementById('tomorrowIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[0].weather[0].icon}.png" alt="${weatherResults.daily[0].weather[0].description} weather icon.">`
 
+            document.getElementById('tomorrow').innerHTML = `${tomorrow}`
+
             document.getElementById('tomorrowTemp').innerHTML = `
             Temperature: ${weatherResults.daily[0].temp.day} C`
 
@@ -77,6 +89,8 @@ function getWeather (city) {
             document.getElementById('dayTwoIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[1].weather[0].icon}.png" alt="${weatherResults.daily[1].weather[0].description} weather icon.">`
 
+            document.getElementById('dayTwo').innerHTML = `${dayTwo}`
+
             document.getElementById('dayTwoTemp').innerHTML = `
             Temperature: ${weatherResults.daily[1].temp.day} C`
 
@@ -86,6 +100,8 @@ function getWeather (city) {
             // Day 3's weather
             document.getElementById('dayThreeIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[2].weather[0].icon}.png" alt="${weatherResults.daily[2].weather[0].description} weather icon.">`
+            
+            document.getElementById('dayThree').innerHTML = `${dayThree}`
 
             document.getElementById('dayThreeTemp').innerHTML = `
             Temperature: ${weatherResults.daily[2].temp.day} C`
@@ -97,6 +113,8 @@ function getWeather (city) {
             document.getElementById('dayFourIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[3].weather[0].icon}.png" alt="${weatherResults.daily[3].weather[0].description} weather icon.">`
 
+            document.getElementById('dayFour').innerHTML = `${dayFour}`
+
             document.getElementById('dayFourTemp').innerHTML = `
             Temperature: ${weatherResults.daily[3].temp.day} C`
 
@@ -106,6 +124,8 @@ function getWeather (city) {
             // Day 5's weather
             document.getElementById('dayFiveIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[4].weather[0].icon}.png" alt="${weatherResults.daily[4].weather[0].description} weather icon.">`
+
+            document.getElementById('dayFive').innerHTML = `${dayFive}`
 
             document.getElementById('dayFiveTemp').innerHTML = `
             Temperature: ${weatherResults.daily[4].temp.day} C`
@@ -121,3 +141,4 @@ function getWeather (city) {
             localStorage.clear();
         })
 }
+
