@@ -1,14 +1,26 @@
-let savedCities = document.getElementById('savedCities')
+// On page load check for 
+window.onload = function displayLastSearch() {
+    if (localStorage.getItem('lastCity') === null) {
+    }
+    else {
+        let city = localStorage.getItem('lastCity') 
+        getWeather(city)
+    }
+}
 
+//When search button is pressed display that citys weather, and store the value to load storage.
 document
     .getElementById('search')
     .addEventListener('click', function (event) {
         event.preventDefault()
         let city = document.getElementById('city').value
+        let savedCities = document.getElementById('savedCities')
         getWeather(city)
         savedCities.insertAdjacentHTML("afterbegin", `<button type="button" class="button is-fullwidth mb-1" cityName="${city}" onclick="pushCity(this)">${city}</button>`)
+        localStorage.setItem('lastCity', city)
     })
 
+// When a saved city is pressed, display weather for that city.
 function pushCity(button) {
     let city = button.getAttribute('cityName')
     getWeather(city)
@@ -104,5 +116,9 @@ function getWeather (city) {
 
             })
 
+        })
+        .catch (function (error) {
+            document.getElementById('searchError').textContent = "Invalid city name."
+            localStorage.clear();
         })
 }
