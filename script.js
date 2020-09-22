@@ -10,7 +10,10 @@ let daySeven = moment().add(168, 'hours').format('ddd');
 
 // On page load check for 
 window.onload = function displayLastSearch() {
-    if (localStorage.getItem('lastCity') === null) {}
+    if (localStorage.getItem('lastCity') === null) {
+        let city = 'Ottawa'
+        getWeather(city)
+    }
     else {
         let city = localStorage.getItem('lastCity') 
         getWeather(city)
