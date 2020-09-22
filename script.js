@@ -94,10 +94,10 @@ function getWeather (city) {
             document.getElementById('tomorrowIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[0].weather[0].icon}.png" alt="${weatherResults.daily[0].weather[0].description} weather icon.">`
 
-            document.getElementById('tomorrow').innerHTML = `${tomorrow}`
+            document.getElementById('tomorrow').innerHTML = `<strong>${tomorrow}</strong>`
 
             document.getElementById('tomorrowTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[0].temp.day)} C`
+            ${Math.round(weatherResults.daily[0].temp.max)} / ${Math.round(weatherResults.daily[0].temp.min)} C`
 
             document.getElementById('tomorrowHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[0].humidity}%`
@@ -106,10 +106,10 @@ function getWeather (city) {
             document.getElementById('dayTwoIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[1].weather[0].icon}.png" alt="${weatherResults.daily[1].weather[0].description} weather icon.">`
 
-            document.getElementById('dayTwo').innerHTML = `${dayTwo}`
+            document.getElementById('dayTwo').innerHTML = `<strong>${dayTwo}</strong>`
 
             document.getElementById('dayTwoTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[1].temp.day)} C`
+            ${Math.round(weatherResults.daily[1].temp.max)} / ${Math.round(weatherResults.daily[1].temp.min)} C`
 
             document.getElementById('dayTwoHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[1].humidity}%`
@@ -118,10 +118,10 @@ function getWeather (city) {
             document.getElementById('dayThreeIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[2].weather[0].icon}.png" alt="${weatherResults.daily[2].weather[0].description} weather icon.">`
             
-            document.getElementById('dayThree').innerHTML = `${dayThree}`
+            document.getElementById('dayThree').innerHTML = `<strong>${dayThree}</strong>`
 
             document.getElementById('dayThreeTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[2].temp.day)} C`
+            ${Math.round(weatherResults.daily[2].temp.max)} / ${Math.round(weatherResults.daily[2].temp.min)} C`
 
             document.getElementById('dayThreeHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[2].humidity}%`
@@ -130,10 +130,10 @@ function getWeather (city) {
             document.getElementById('dayFourIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[3].weather[0].icon}.png" alt="${weatherResults.daily[3].weather[0].description} weather icon.">`
 
-            document.getElementById('dayFour').innerHTML = `${dayFour}`
+            document.getElementById('dayFour').innerHTML = `<strong>${dayFour}</strong>`
 
             document.getElementById('dayFourTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[3].temp.day)} C`
+            ${Math.round(weatherResults.daily[3].temp.max)} / ${Math.round(weatherResults.daily[3].temp.min)} C`
 
             document.getElementById('dayFourHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[3].humidity}%`
@@ -142,10 +142,10 @@ function getWeather (city) {
             document.getElementById('dayFiveIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[4].weather[0].icon}.png" alt="${weatherResults.daily[4].weather[0].description} weather icon.">`
 
-            document.getElementById('dayFive').innerHTML = `${dayFive}`
+            document.getElementById('dayFive').innerHTML = `<strong>${dayFive}</strong>`
 
             document.getElementById('dayFiveTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[4].temp.day)} C`
+            ${Math.round(weatherResults.daily[4].temp.max)} / ${Math.round(weatherResults.daily[4].temp.day)} C`
 
             document.getElementById('dayFiveHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[4].humidity}%`
@@ -154,10 +154,10 @@ function getWeather (city) {
             document.getElementById('daySixIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[5].weather[0].icon}.png" alt="${weatherResults.daily[5].weather[0].description} weather icon.">`
 
-            document.getElementById('daySix').innerHTML = `${daySix}`
+            document.getElementById('daySix').innerHTML = `<strong>${daySix}</strong>`
 
             document.getElementById('daySixTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[5].temp.day)} C`
+            ${Math.round(weatherResults.daily[5].temp.max)} / ${Math.round(weatherResults.daily[5].temp.min)}C`
 
             document.getElementById('daySixHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[5].humidity}%`
@@ -166,10 +166,10 @@ function getWeather (city) {
             document.getElementById('daySevenIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[6].weather[0].icon}.png" alt="${weatherResults.daily[6].weather[0].description} weather icon.">`
 
-            document.getElementById('daySeven').innerHTML = `${daySeven}`
+            document.getElementById('daySeven').innerHTML = `<strong>${daySeven}</strong>`
 
             document.getElementById('daySevenTemp').innerHTML = `
-            Temperature: ${Math.round(weatherResults.daily[6].temp.day)} C`
+            ${Math.round(weatherResults.daily[6].temp.max)} / ${Math.round(weatherResults.daily[6].temp.min)} C`
 
             document.getElementById('daySevenHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[6].humidity}%`
