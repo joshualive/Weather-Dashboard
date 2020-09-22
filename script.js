@@ -1,11 +1,11 @@
 let today = moment().format("MMMM Do")
-let tomorrow = moment().add(24, 'hours').format('dddd'); 
-let dayTwo = moment().add(48, 'hours').format('dddd');
-let dayThree = moment().add(72, 'hours').format('dddd');
-let dayFour = moment().add(96, 'hours').format('dddd');
-let dayFive = moment().add(120, 'hours').format('dddd');
-let daySix = moment().add(144, 'hours').format('dddd');
-let daySeven = moment().add(168, 'hours').format('dddd');
+let tomorrow = moment().add(24, 'hours').format('ddd'); 
+let dayTwo = moment().add(48, 'hours').format('ddd');
+let dayThree = moment().add(72, 'hours').format('ddd');
+let dayFour = moment().add(96, 'hours').format('ddd');
+let dayFive = moment().add(120, 'hours').format('ddd');
+let daySix = moment().add(144, 'hours').format('ddd');
+let daySeven = moment().add(168, 'hours').format('ddd');
 
 
 // On page load check for 
@@ -27,6 +27,7 @@ document
         getWeather(city)
         savedCities.insertAdjacentHTML("afterbegin", `<button type="button" class="button is-fullwidth mb-1" cityName="${city}" onclick="pushCity(this)">${city}</button>`)
         localStorage.setItem('lastCity', city)
+        document.getElementById('searchError').textContent = ""
     })
 
 // When a saved city is pressed, display weather for that city.
@@ -62,7 +63,7 @@ function getWeather (city) {
             <img src="https://openweathermap.org/img/wn/${weatherResults.current.weather[0].icon}.png" alt="${weatherResults.current.weather[0].description} weather icon.">`
 
             document.getElementById('currentTemp').innerHTML = `
-            <strong>Temperature:</strong> ${weatherResults.current.temp} C`
+            <strong>Temperature:</strong> ${Math.round(weatherResults.current.temp)} C`
 
             document.getElementById('currentHumidity').innerHTML = `
             <strong>Humidity:</strong> ${weatherResults.current.humidity}%`
@@ -93,7 +94,7 @@ function getWeather (city) {
             document.getElementById('tomorrow').innerHTML = `${tomorrow}`
 
             document.getElementById('tomorrowTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[0].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[0].temp.day)} C`
 
             document.getElementById('tomorrowHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[0].humidity}%`
@@ -105,7 +106,7 @@ function getWeather (city) {
             document.getElementById('dayTwo').innerHTML = `${dayTwo}`
 
             document.getElementById('dayTwoTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[1].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[1].temp.day)} C`
 
             document.getElementById('dayTwoHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[1].humidity}%`
@@ -117,7 +118,7 @@ function getWeather (city) {
             document.getElementById('dayThree').innerHTML = `${dayThree}`
 
             document.getElementById('dayThreeTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[2].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[2].temp.day)} C`
 
             document.getElementById('dayThreeHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[2].humidity}%`
@@ -129,7 +130,7 @@ function getWeather (city) {
             document.getElementById('dayFour').innerHTML = `${dayFour}`
 
             document.getElementById('dayFourTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[3].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[3].temp.day)} C`
 
             document.getElementById('dayFourHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[3].humidity}%`
@@ -141,7 +142,7 @@ function getWeather (city) {
             document.getElementById('dayFive').innerHTML = `${dayFive}`
 
             document.getElementById('dayFiveTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[4].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[4].temp.day)} C`
 
             document.getElementById('dayFiveHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[4].humidity}%`
@@ -153,7 +154,7 @@ function getWeather (city) {
             document.getElementById('daySix').innerHTML = `${daySix}`
 
             document.getElementById('daySixTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[5].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[5].temp.day)} C`
 
             document.getElementById('daySixHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[5].humidity}%`
@@ -165,7 +166,7 @@ function getWeather (city) {
             document.getElementById('daySeven').innerHTML = `${daySeven}`
 
             document.getElementById('daySevenTemp').innerHTML = `
-            Temperature: ${weatherResults.daily[6].temp.day} C`
+            Temperature: ${Math.round(weatherResults.daily[6].temp.day)} C`
 
             document.getElementById('daySevenHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[6].humidity}%`
