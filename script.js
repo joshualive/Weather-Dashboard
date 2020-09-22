@@ -73,6 +73,19 @@ function getWeather (city) {
             document.getElementById('currentUV').innerHTML = `
             <strong>UV Index:</strong> ${weatherResults.current.uvi}`
 
+            if (weatherResults.current.uvi < 3) {
+                document.getElementById('currentUV').innerHTML = `
+                <strong>UV Index:</strong> <button class="button is-small is-link is-success">${weatherResults.current.uvi}</button>`
+            }
+            else if (weatherResults.current.uvi >= 3 && weatherResults.current.uvi <= 6 ){
+                document.getElementById('currentUV').innerHTML = `
+                <strong>UV Index:</strong> <button class="button is-small is-link is-warning">${weatherResults.current.uvi}</button>`
+            }
+            else {
+                document.getElementById('currentUV').innerHTML = `
+                <strong>UV Index:</strong> <button class="button is-small is-link is-danger">${weatherResults.current.uvi}</button>`
+            }
+
             //Tomorrow's weather
             document.getElementById('tomorrowIcon').innerHTML = `
             <img src="https://openweathermap.org/img/wn/${weatherResults.daily[0].weather[0].icon}.png" alt="${weatherResults.daily[0].weather[0].description} weather icon.">`
@@ -132,6 +145,30 @@ function getWeather (city) {
 
             document.getElementById('dayFiveHumidity').innerHTML = `
             Humidity: ${weatherResults.daily[4].humidity}%`
+
+            // Day 6's weather
+            document.getElementById('daySixIcon').innerHTML = `
+            <img src="https://openweathermap.org/img/wn/${weatherResults.daily[5].weather[0].icon}.png" alt="${weatherResults.daily[5].weather[0].description} weather icon.">`
+
+            document.getElementById('daySix').innerHTML = `${daySix}`
+
+            document.getElementById('daySixTemp').innerHTML = `
+            Temperature: ${weatherResults.daily[5].temp.day} C`
+
+            document.getElementById('daySixHumidity').innerHTML = `
+            Humidity: ${weatherResults.daily[5].humidity}%`
+
+            // Day 7's weather
+            document.getElementById('daySevenIcon').innerHTML = `
+            <img src="https://openweathermap.org/img/wn/${weatherResults.daily[6].weather[0].icon}.png" alt="${weatherResults.daily[6].weather[0].description} weather icon.">`
+
+            document.getElementById('daySeven').innerHTML = `${daySeven}`
+
+            document.getElementById('daySevenTemp').innerHTML = `
+            Temperature: ${weatherResults.daily[6].temp.day} C`
+
+            document.getElementById('daySevenHumidity').innerHTML = `
+            Humidity: ${weatherResults.daily[6].humidity}%`
 
             })
 
