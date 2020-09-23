@@ -11350,13 +11350,13 @@
   }
 
   .is-small-card-mw {
-    max-width: 150px;
-    min-width: 150px;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   .is-med-card-mw {
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 100%;
+    min-width: 100%;
     min-height: 200px;
   }
 
