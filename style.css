@@ -11331,4 +11331,16 @@
     background-color: #fafafa;
     padding: 3rem 1.5rem 6rem;
   }
+
+  .is-full-width {
+    width: 100%;
+  }
+
+  .is-nav-mw {
+    max-width: 300px;
+  }
+
+  .is-full-height {
+    min-height: 100vh;
+  }
   /*# sourceMappingURL=bulma.css.map */
