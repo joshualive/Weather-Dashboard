@@ -341,7 +341,7 @@
   input,
   select,
   textarea {
-    font-family: BlinkMacSystemFont, -apple-system, "omnes-pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "omnes-pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
   
   code,
@@ -9508,6 +9508,10 @@
   
   .pr-5 {
     padding-right: 1.5rem !important;
+  }
+
+  .pr-6 {
+    padding-right: 2rem !important;
   }
   
   .pb-5 {
