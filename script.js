@@ -7,6 +7,14 @@ let dayFive = moment().add(120, 'hours').format('ddd');
 let daySix = moment().add(144, 'hours').format('ddd');
 let daySeven = moment().add(168, 'hours').format('ddd');
 
+let dateTomorrow = moment().add(24, 'hours').format('MMM DD'); 
+let dateTwo = moment().add(48, 'hours').format('MMM DD');
+let dateThree = moment().add(72, 'hours').format('MMM DD');
+let dateFour = moment().add(96, 'hours').format('MMM DD');
+let dateFive = moment().add(120, 'hours').format('MMM DD');
+let dateSix = moment().add(144, 'hours').format('MMM DD');
+let dateSeven = moment().add(168, 'hours').format('MMM DD');
+
 
 // On page load check for saved city in local storage. If none is found, display Ottawa weather.
 window.onload = function displayLastSearch() {
@@ -62,32 +70,30 @@ function getWeather (city) {
 
             // Today's weather.
             document.getElementById('cityName').innerHTML = `
-            ${city} (${today}) 
-            <img src="images/${weatherResults.current.weather[0].icon}.svg" style="width:50px;height50px;" alt="${weatherResults.current.weather[0].description} weather icon.">`
+            ${city} <img src="images/${weatherResults.current.weather[0].icon}.svg" style="width:50px;height50px;" class="has-image-centered" alt="${weatherResults.current.weather[0].description} weather icon.">`
+
+            document.getElementById('date').innerHTML = `${today}`
 
             document.getElementById('currentTemp').innerHTML = `
-            <strong>Temperature:</strong> ${Math.round(weatherResults.current.temp)} C`
+            <text class="title is-0">${Math.round(weatherResults.current.temp)} C</text>`
 
             document.getElementById('currentHumidity').innerHTML = `
-            <strong>Humidity:</strong> ${weatherResults.current.humidity}%`
+            <text class="title is-0">${weatherResults.current.humidity}%</text>`
 
             document.getElementById('currentWind').innerHTML = `
-            <strong>Wind Speed:</strong> ${weatherResults.current.wind_speed} KMPH`
-
-            document.getElementById('currentUV').innerHTML = `
-            <strong>UV Index:</strong> ${weatherResults.current.uvi}`
+            <text class="title is-0">${weatherResults.current.wind_speed}</text><text class="title is-3">km/h</text>`
 
             if (weatherResults.current.uvi < 3) {
                 document.getElementById('currentUV').innerHTML = `
-                <strong>UV Index:</strong> <button class="button is-small is-link is-success">${weatherResults.current.uvi}</button>`
+                <text class="title is-0 has-text-success">${weatherResults.current.uvi}</text>`
             }
             else if (weatherResults.current.uvi >= 3 && weatherResults.current.uvi <= 6 ){
                 document.getElementById('currentUV').innerHTML = `
-                <strong>UV Index:</strong> <button class="button is-small is-link is-warning">${weatherResults.current.uvi}</button>`
+                <text class="title is-0 has-text-warning">${weatherResults.current.uvi}</text>`
             }
             else {
                 document.getElementById('currentUV').innerHTML = `
-                <strong>UV Index:</strong> <button class="button is-small is-link is-danger">${weatherResults.current.uvi}</button>`
+                <text class="title is-0 has-text-danger">${weatherResults.current.uvi}</text>`
             }
 
             // 7 Day Forecast Cards
@@ -96,6 +102,8 @@ function getWeather (city) {
             <img src="images/${weatherResults.daily[0].weather[0].icon}.svg" style="width:50px;height50px;" class="pt-2 pb-2" alt="${weatherResults.daily[0].weather[0].description} weather icon.">`
 
             document.getElementById('tomorrow').innerHTML = `<strong>${tomorrow}</strong>`
+
+            document.getElementById('dateTomorrow').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateTomorrow}</p>`
 
             document.getElementById('tomorrowTemp').innerHTML = `
             ${Math.round(weatherResults.daily[0].temp.max)} / ${Math.round(weatherResults.daily[0].temp.min)} C`
@@ -109,6 +117,8 @@ function getWeather (city) {
 
             document.getElementById('dayTwo').innerHTML = `<strong>${dayTwo}</strong>`
 
+            document.getElementById('dateTwo').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateTwo}</p>`
+
             document.getElementById('dayTwoTemp').innerHTML = `
             ${Math.round(weatherResults.daily[1].temp.max)} / ${Math.round(weatherResults.daily[1].temp.min)} C`
 
@@ -120,6 +130,8 @@ function getWeather (city) {
             <img src="images/${weatherResults.daily[2].weather[0].icon}.svg" style="width:50px;height50px;" class="pt-2 pb-2" alt="${weatherResults.daily[2].weather[0].description} weather icon.">`
             
             document.getElementById('dayThree').innerHTML = `<strong>${dayThree}</strong>`
+
+            document.getElementById('dateThree').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateThree}</p>`
 
             document.getElementById('dayThreeTemp').innerHTML = `
             ${Math.round(weatherResults.daily[2].temp.max)} / ${Math.round(weatherResults.daily[2].temp.min)} C`
@@ -133,6 +145,8 @@ function getWeather (city) {
 
             document.getElementById('dayFour').innerHTML = `<strong>${dayFour}</strong>`
 
+            document.getElementById('dateFour').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateFour}</p>`
+
             document.getElementById('dayFourTemp').innerHTML = `
             ${Math.round(weatherResults.daily[3].temp.max)} / ${Math.round(weatherResults.daily[3].temp.min)} C`
 
@@ -144,6 +158,8 @@ function getWeather (city) {
             <img src="images/${weatherResults.daily[4].weather[0].icon}.svg" style="width:50px;height50px;" class="pt-2 pb-2" alt="${weatherResults.daily[4].weather[0].description} weather icon.">`
 
             document.getElementById('dayFive').innerHTML = `<strong>${dayFive}</strong>`
+
+            document.getElementById('dateFive').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateFive}</p>`
 
             document.getElementById('dayFiveTemp').innerHTML = `
             ${Math.round(weatherResults.daily[4].temp.max)} / ${Math.round(weatherResults.daily[4].temp.day)} C`
@@ -157,6 +173,8 @@ function getWeather (city) {
 
             document.getElementById('daySix').innerHTML = `<strong>${daySix}</strong>`
 
+            document.getElementById('dateSix').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateSix}</p>`
+
             document.getElementById('daySixTemp').innerHTML = `
             ${Math.round(weatherResults.daily[5].temp.max)} / ${Math.round(weatherResults.daily[5].temp.min)}C`
 
@@ -168,6 +186,8 @@ function getWeather (city) {
             <img src="images/${weatherResults.daily[6].weather[0].icon}.svg" style="width:50px;height50px;" class="pt-2 pb-2" alt="${weatherResults.daily[6].weather[0].description} weather icon.">`
 
             document.getElementById('daySeven').innerHTML = `<strong>${daySeven}</strong>`
+
+            document.getElementById('dateSeven').innerHTML = `<p class="has-text-grey has-text-centered mb-1">${dateSeven}</p>`
 
             document.getElementById('daySevenTemp').innerHTML = `
             ${Math.round(weatherResults.daily[6].temp.max)} / ${Math.round(weatherResults.daily[6].temp.min)} C`

@@ -317,7 +317,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     min-width: 300px;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
@@ -341,7 +341,7 @@
   input,
   select,
   textarea {
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: BlinkMacSystemFont, -apple-system, "omnes-pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
   
   code,
@@ -3107,6 +3107,10 @@
     margin-top: -1.25rem;
   }
   
+  .title.is-0 {
+    font-size: 5rem;
+  }
+
   .title.is-1 {
     font-size: 3rem;
   }
@@ -11338,9 +11342,34 @@
 
   .is-nav-mw {
     max-width: 300px;
+    min-width: 300px;
   }
 
   .is-full-height {
     min-height: 100vh;
+  }
+
+  .is-small-card-mw {
+    max-width: 150px;
+    min-width: 150px;
+  }
+
+  .is-med-card-mw {
+    max-width: 300px;
+    min-width: 300px;
+    min-height: 200px;
+  }
+
+  .is-top {
+    vertical-align: top;
+    margin-top: 50px;
+  }
+
+  .has-image-centered {
+    vertical-align: text-bottom
+  }
+
+  .nm-1 {
+    margin-top: -1rem !important;
   }
   /*# sourceMappingURL=bulma.css.map */
