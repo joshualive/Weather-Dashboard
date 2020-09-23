@@ -2,6 +2,8 @@
 
 This project required building a Weather Dashboard using the OpenWeather API to retrieve a minimum 5 day forecast with dates and current weather, incuding temperature, humidity, wind speed, and uv index. I used moment.js for the date system.
 
+https://joshualive.github.io/Weather-Dashboard/
+
 ![weather dashboard preview](images/DashboardPreview.png)
 
 ## User Story
